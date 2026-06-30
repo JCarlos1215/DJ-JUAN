@@ -46,16 +46,24 @@ body {
   margin-top: 30px;
   padding-right: 110px;
 }
-.fecha-corta{
-    width:60px;          /* antes eran ~70px */
+.fecha-corta,
+.fecha-mes,
+.fecha-anio {
+  display: inline-block;
+  min-width: 90px;
+  width: auto;
 }
 
-.fecha-mes{
-    width:110px;         /* antes eran ~220px */
+.fecha-corta {
+  width: 90px;
 }
 
-.fecha-anio{
-    width:25px;          /* antes eran ~70px */
+.fecha-mes {
+  width: 180px;
+}
+
+.fecha-anio {
+  width: 60px;
 }
 
 p{
