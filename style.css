@@ -22,69 +22,66 @@ body {
   padding: 0.6in;
   position: relative;
   box-shadow: 0 0 20px rgba(0,0,0,.25);
-  font-size: 17px;
+  font-size: 14.5px;
   line-height: 1.6;
 }
 
 .logo {
   position: absolute;
   right: 70px;
-  top: 30px;
+  top: 20px;
 }
 
 .logo img {
-  width: 115px;
-  height: 115px;
+  width: 150px;
+  height: 150px;
   object-fit: contain;
 }
 
 .fecha {
-  margin-top: 50px;
+  margin-top: 30px;
+  padding-right: 110px;
+}
+.fecha-corta{
+    width:60px;          /* antes eran ~70px */
 }
 
-p {
-  text-align: justify;
-  margin: 18px 0;
+.fecha-mes{
+    width:110px;         /* antes eran ~220px */
+}
+
+.fecha-anio{
+    width:25px;          /* antes eran ~70px */
+}
+
+p{
+    text-align:justify;
+    margin:8px 0;
+    line-height:1.28;
 }
 
 input {
   border: none;
   border-bottom: 2px solid #000;
   outline: none;
-  height: 24px;
+  min-height: 26px;
   font-size: 16px;
   text-align: center;
   background: transparent;
-  margin: 0 4px;
+  margin: 2px 4px;
+  max-width: 100%;
 }
 
 input:focus {
   background: #eef6ff;
 }
 
-.corto {
-  width: 70px;
-}
-
-.mediano {
-  width: 160px;
-}
-
-.mes {
-  width: 220px;
-}
-
-.anio {
-  width: 70px;
-}
-
-.largo {
-  width: 320px;
-}
-
-.muy-largo {
-  width: 620px;
-}
+.corto { width: 70px; }
+.mediano { width: 160px; }
+.mes { width: 220px; }
+.anio { width: 70px; }
+.largo { width: 320px; }
+.muy-largo { width: 620px; }
 
 h2 {
   text-align: center;
@@ -93,23 +90,26 @@ h2 {
   font-weight: 700;
 }
 
-ol {
-  padding-left: 55px;
+ol{
+    padding-left:28px;
+    margin-top:8px;
 }
 
-li {
-  margin-bottom: 14px;
-  text-align: justify;
+li{
+    margin-bottom:8px;
+    line-height:1.28;
+    text-align:justify;
 }
 
 .firmas {
   display: flex;
   justify-content: space-around;
-  margin-top: 60px;
+  gap: 40px;
+  margin-top: 35px;
   text-align: center;
 }
 
-.firmas div {
+.firmas > div {
   width: 280px;
 }
 
@@ -133,29 +133,398 @@ button {
   font-size: 14px;
 }
 
+/* TABLETS */
+@media screen and (max-width: 900px) {
+  body {
+    padding: 10px;
+  }
+
+ .hoja{
+    width: 8.5in;
+    min-height: 11in;
+    background:#fff;
+    margin:30px auto;
+    padding:0.45in 0.55in;
+    position:relative;
+
+    box-shadow:0 0 20px rgba(0, 152, 234, 0.18);
+
+    font-size:14px;
+    line-height:0.5;
+}
+
+  .logo {
+    right: 25px;
+    top: 25px;
+  }
+
+  .logo img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .fecha {
+    padding-right: 110px;
+  }
+
+  .muy-largo {
+    width: 100%;
+  }
+}
+
+/* CELULARES */
+@media screen and (max-width: 600px) {
+  body {
+    padding: 0;
+    background: white;
+  }
+
+  .hoja {
+    width: 100%;
+    padding: 25px 16px;
+    box-shadow: none;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .logo {
+    position: relative;
+    right: auto;
+    top: auto;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .logo img {
+    width: 95px;
+    height: 95px;
+  }
+
+  .fecha {
+    margin-top: 10px;
+    padding-right: 0;
+  }
+
+  p {
+    text-align: left;
+  }
+
+  input,
+  .corto,
+  .mediano,
+  .mes,
+  .anio,
+  .largo,
+  .muy-largo {
+    width: 100%;
+    display: block;
+    margin: 6px 0 12px;
+    text-align: left;
+    padding: 4px 6px;
+  }
+
+  h2 {
+    font-size: 19px;
+  }
+
+  ol {
+    padding-left: 25px;
+  }
+
+  .firmas {
+    flex-direction: column;
+    gap: 35px;
+    align-items: center;
+  }
+
+  .firmas > div {
+    width: 100%;
+  }
+
+  .botones {
+    margin: 15px 0;
+  }
+
+  button {
+    width: 90%;
+    max-width: 350px;
+  }
+}
+
+/* CELULARES MUY PEQUEÑOS */
+@media screen and (max-width: 380px) {
+  .hoja {
+    padding: 20px 12px;
+    font-size: 14px;
+  }
+
+  input {
+    font-size: 14px;
+  }
+}
+
+/* IMPRESIÓN */
 @media print {
-  html, body {
+  html,
+  body {
     background: white;
     padding: 0;
   }
 
   .hoja {
-    box-shadow: none;
-    margin: 0;
     width: 8.5in;
     min-height: 11in;
+    padding: 0.6in;
+    box-shadow: none;
+    margin: 0;
+    font-size: 17px;
+  }
+
+  .logo {
+    position: absolute;
+    right: 70px;
+    top: 30px;
+  }
+
+  .logo img {
+    width: 115px;
+    height: 115px;
+  }
+
+  .fecha {
+    margin-top: 50px;
+    padding-right: 140px;
+  }
+
+  p {
+    text-align: justify;
+  }
+
+  input {
+    display: inline-block;
+    text-align: center;
+    padding: 0;
+    margin: 0 4px;
+  }
+
+  .corto { width: 70px; }
+  .mediano { width: 160px; }
+  .mes { width: 220px; }
+  .anio { width: 70px; }
+  .largo { width: 320px; }
+  .muy-largo { width: 620px; }
+
+  .firmas {
+    flex-direction: row;
   }
 
   .botones {
     display: none;
-  }
-
-  input {
-    background: transparent;
   }
 }
 
 @page {
   size: letter;
   margin: 0;
+}
+@media (max-width:900px){
+
+    body{
+        padding:10px;
+        overflow-x:auto;
+        background:#d7d7d7;
+    }
+
+    .hoja{
+        transform-origin:top center;
+        transform:scale(.88);
+        margin:auto;
+    }
+
+}
+
+@media (max-width:700px){
+
+    .hoja{
+        transform:scale(.72);
+    }
+
+}
+
+@media (max-width:500px){
+
+    .hoja{
+        transform:scale(.55);
+    }
+
+}
+@media print{
+
+    body{
+        padding:0;
+        background:white;
+    }
+
+    .hoja{
+
+        width:8.5in;
+        min-height:11in;
+
+        transform:none;
+
+        margin:0;
+
+        box-shadow:none;
+    }
+
+    .botones{
+        display:none;
+    }
+
+}
+/* Reducir a la mitad las líneas donde se escribe texto */
+
+input {
+  width: 50% !important;
+}
+
+/* Fecha inicial */
+.fecha input {
+  width: 35px !important;
+}
+
+.fecha .mes,
+.fecha-mes {
+  width: 110px !important;
+}
+
+.fecha .anio,
+.fecha-anio {
+  width: 35px !important;
+}
+
+/* Líneas largas */
+.largo {
+  width: 160px !important;
+}
+
+.muy-largo {
+  width: 310px !important;
+}
+
+.mediano {
+  width: 80px !important;
+}
+
+.corto {
+  width: 35px !important;
+}
+
+.mes {
+  width: 110px !important;
+}
+
+.anio {
+  width: 35px !important;
+}
+/* ===========================
+   COMPACTAR TODO EL DOCUMENTO
+   =========================== */
+
+/* Reduce el tamaño general del texto */
+.hoja{
+    font-size:14px;
+    line-height:1.2;
+}
+
+/* Reduce separación entre párrafos */
+p{
+    margin:6px 0;
+    line-height:1.25;
+    text-align:justify;
+}
+
+/* Reduce separación de títulos */
+h1,h2,h3,h4{
+    margin:8px 0;
+    line-height:1.2;
+}
+
+/* Reduce espacios de las listas */
+ol{
+    margin:8px 0;
+    padding-left:22px;
+}
+
+li{
+    margin-bottom:6px;
+    line-height:1.25;
+    text-align:justify;
+}
+
+/* Reduce el espacio de los campos */
+input{
+    margin:0 2px;
+    padding:1px 2px;
+    height:20px;
+}
+
+/* Fecha superior */
+.fecha{
+    margin-bottom:12px;
+}
+
+.fecha input{
+    width:35px !important;
+}
+
+.fecha .mes{
+    width:110px !important;
+}
+
+.fecha .anio{
+    width:35px !important;
+}
+
+/* Reducir líneas de captura */
+.corto{
+    width:35px !important;
+}
+
+.mediano{
+    width:80px !important;
+}
+
+.largo{
+    width:160px !important;
+}
+
+.muy-largo{
+    width:310px !important;
+}
+
+.mes{
+    width:110px !important;
+}
+
+.anio{
+    width:35px !important;
+}
+
+/* Firmas más arriba */
+.firmas{
+    margin-top:25px;
+}
+
+.linea{
+    height:25px;
+    margin-bottom:5px;
+}
+
+/* Menos espacio entre bloques */
+section,
+article,
+div{
+    margin-top:0;
+    margin-bottom:0;
 }
