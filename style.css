@@ -31,8 +31,8 @@ body {
 
 .logo {
   position: absolute;
-  right:200px;
-  top: -20px;
+  right: 2.2in;
+  top: 0;
 }
 
 .logo img {
@@ -147,50 +147,60 @@ button {
 
 /* No responsive resizing */
 
-/* IMPRESIÓN */
+@page {
+  size: letter;
+  margin: 0.2in;
+}
+
 @media print {
-  html,
   body {
+    padding: auto;
     background: white;
-    padding: 0;
+    min-height: 100vh;
   }
 
   .hoja {
-    width: 8.5in;
-    min-height: 11in;
-    padding: 0.6in;
+    width: auto;
+    min-height: auto;
+    padding: 0.4in;
     box-shadow: none;
     margin: 0;
-    font-size: 17px;
+    font-size: 14.5px;
+    line-height: 1.6;
+    background: white;
+    box-sizing: border-box;
   }
 
   .logo {
     position: absolute;
-    right: 70px;
-    top: 30px;
+    right: 0.3in;
+    top: 0.3in;
   }
 
   .logo img {
-    width: 115px;
-    height: 115px;
+    width: 170px;
+    height: 170px;
   }
 
   .fecha {
-    margin-top: 50px;
-    padding-right: 140px;
-  }
-
-  p {
-    text-align: justify;
+    margin-top: 30px;
+    padding-right: 110px;
   }
 
   input {
-    display: inline-block;
+    border: none;
+    border-bottom: 2px solid #000;
+    outline: none;
+    min-height: 26px;
+    font-size: 16px;
     text-align: center;
-    padding: 0;
-    margin: 0 4px;
+    background: transparent;
+    margin: 2px 4px;
   }
 
+  .fecha-corta { width: 90px; }
+  .fecha-mes { width: 180px; }
+  .fecha-anio { width: 60px; }
   .corto { width: 70px; }
   .mediano { width: 160px; }
   .mes { width: 220px; }
@@ -207,10 +217,6 @@ button {
   }
 }
 
-@page {
-  size: letter;
-  margin: 0;
-}
 @media (max-width:900px){
 
     body{
@@ -239,30 +245,6 @@ button {
 
     .hoja{
         transform:scale(.55);
-    }
-
-}
-@media print{
-
-    body{
-        padding:0;
-        background:white;
-    }
-
-    .hoja{
-
-        width:8.5in;
-        min-height:11in;
-
-        transform:none;
-
-        margin:0;
-
-        box-shadow:none;
-    }
-
-    .botones{
-        display:none;
     }
 
 }
@@ -411,4 +393,75 @@ article,
 div{
     margin-top:0;
     margin-bottom:0;
+}
+
+/* Forzar aspecto idéntico en la exportación PDF */
+@media print {
+  html,
+  body {
+    background: white;
+    padding: 0;
+    margin: 0;
+  }
+
+  .hoja {
+    width: 8.5in;
+    min-height: 11in;
+    padding: 0.6in;
+    box-shadow: none;
+    margin: auto;
+    font-size: 16.5px;
+    line-height: 4.6;
+    background: white;
+  }
+
+  .logo {
+    position: absolute;
+    right: 2.2in;
+    top: 0;
+  }
+
+  .logo img {
+    width: 170px;
+    height: 170px;
+  }
+
+  .fecha {
+    margin-top: 30px;
+    padding-right: 110px;
+  }
+
+  input {
+    border: none;
+    border-bottom: 2px solid #000;
+    outline: none;
+    min-height: 26px;
+    font-size: 16px;
+    text-align: center;
+    background: transparent;
+    margin: 2px 4px;
+  }
+
+  .fecha-corta { width: 90px; }
+  .fecha-mes { width: 180px; }
+  .fecha-anio { width: 60px; }
+  .corto { width: 70px; }
+  .mediano { width: 160px; }
+  .mes { width: 220px; }
+  .anio { width: 70px; }
+  .largo { width: 320px; }
+  .muy-largo { width: 620px; }
+
+  .firmas {
+    flex-direction: row;
+  }
+
+  .botones {
+    display: none;
+  }
+}
+
+@page {
+  size: letter;
+  margin: 0;
 }
