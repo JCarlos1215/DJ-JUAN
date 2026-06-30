@@ -7,11 +7,14 @@
 
 html {
   background: #bdbdbd;
+  min-width: 8.5in;
 }
 
 body {
   margin: 0;
   padding: 20px;
+  min-width: 8.5in;
+  overflow-x: auto;
 }
 
 .hoja {
@@ -28,13 +31,14 @@ body {
 
 .logo {
   position: absolute;
-  right: 70px;
-  top: 20px;
+  right:200px;
+  top: -20px;
 }
 
 .logo img {
-  width: 150px;
-  height: 150px;
+  width: 170px;
+  height: 170px;
+  position: absolute;
   object-fit: contain;
 }
 
@@ -133,135 +137,7 @@ button {
   font-size: 14px;
 }
 
-/* TABLETS */
-@media screen and (max-width: 900px) {
-  body {
-    padding: 10px;
-  }
-
- .hoja{
-    width: 8.5in;
-    min-height: 11in;
-    background:#fff;
-    margin:30px auto;
-    padding:0.45in 0.55in;
-    position:relative;
-
-    box-shadow:0 0 20px rgba(0, 152, 234, 0.18);
-
-    font-size:14px;
-    line-height:0.5;
-}
-
-  .logo {
-    right: 25px;
-    top: 25px;
-  }
-
-  .logo img {
-    width: 90px;
-    height: 90px;
-  }
-
-  .fecha {
-    padding-right: 110px;
-  }
-
-  .muy-largo {
-    width: 100%;
-  }
-}
-
-/* CELULARES */
-@media screen and (max-width: 600px) {
-  body {
-    padding: 0;
-    background: white;
-  }
-
-  .hoja {
-    width: 100%;
-    padding: 25px 16px;
-    box-shadow: none;
-    font-size: 15px;
-    line-height: 1.7;
-  }
-
-  .logo {
-    position: relative;
-    right: auto;
-    top: auto;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  .logo img {
-    width: 95px;
-    height: 95px;
-  }
-
-  .fecha {
-    margin-top: 10px;
-    padding-right: 0;
-  }
-
-  p {
-    text-align: left;
-  }
-
-  input,
-  .corto,
-  .mediano,
-  .mes,
-  .anio,
-  .largo,
-  .muy-largo {
-    width: 100%;
-    display: block;
-    margin: 6px 0 12px;
-    text-align: left;
-    padding: 4px 6px;
-  }
-
-  h2 {
-    font-size: 19px;
-  }
-
-  ol {
-    padding-left: 25px;
-  }
-
-  .firmas {
-    flex-direction: column;
-    gap: 35px;
-    align-items: center;
-  }
-
-  .firmas > div {
-    width: 100%;
-  }
-
-  .botones {
-    margin: 15px 0;
-  }
-
-  button {
-    width: 90%;
-    max-width: 350px;
-  }
-}
-
-/* CELULARES MUY PEQUEÑOS */
-@media screen and (max-width: 380px) {
-  .hoja {
-    padding: 20px 12px;
-    font-size: 14px;
-  }
-
-  input {
-    font-size: 14px;
-  }
-}
+/* No responsive resizing */
 
 /* IMPRESIÓN */
 @media print {
